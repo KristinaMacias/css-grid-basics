@@ -1,0 +1,99 @@
+/* CSS Grid */
+.grid-item {
+    padding: 20px; 
+    background-color: whitesmoke;
+    color:#444;
+    border: solid lightgray 2px;
+}
+
+.grid-container {
+    display: grid; 
+    grid-template-columns: 20% 40% 40%;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    grid-template-areas:
+    "navbar navbar navbar"
+    "sidebar header header"
+    "sidebar about about-img"
+    "sidebar mid-content mid-content"
+    "sidebar contact contact"
+    "footer footer footer"
+    ;
+    height: 100vh;
+}
+
+.grid-item-0 {
+    grid-area: sidebar;
+}
+
+.grid-item-1 {
+    grid-area: navbar;
+
+}
+
+.grid-item-2 {
+    grid-area: header;
+}
+
+.grid-item-3 {
+    grid-area: about;
+}
+
+.grid-item-4{
+    grid-area: about-img
+}
+
+.grid-item-5 {
+    grid-area: mid-content;
+}
+
+.grid-item-6 {
+    grid-area: contact;
+}
+
+.grid-item-7 {
+    grid-area: footer;
+}
+
+/* Styling */
+body {
+    margin: 20px;
+}
+
+
+p {
+    line-height: 25px;
+}
+
+button {
+    padding: 10px;
+    border: 1px #444 solid;
+    border-radius: 3px;
+}
+
+.about-img {
+    max-inline-size: 100%;
+    block-size: auto;
+    /* The max-inline-size CSS property defines the horizontal or vertical maximum size of an element's block, depending on its writing mode. It corresponds to either the max-width or the max-height property, depending on the value of writing-mode. */
+}
+
+/* Media queries - stacks every div at 700px */
+
+@media (max-width: 700px) {
+    .grid-container {
+        display: grid; 
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-gap: 10px;
+        grid-template-areas:
+        "navbar navbar"
+        "header header"
+        "about-img about-img"
+        "about about"
+        "mid-content mid-content"
+        "contact contact"
+        "footer footer";
+        height: 100vh;
+    }
+}
+
